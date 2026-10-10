@@ -1,7 +1,7 @@
 # FDE
 
 
-| FDE開発ライフサイクル | クライアント / AIエージェント層 | MCPサーバー層（アダプター） | インフラストラクチャ層（サーバーレス） | セキュリティ層（AgentCore / Guardrails） |
+| FDE開発ライフサイクル | クライアント / AIエージェント層 | MCPサーバー層| インフラストラクチャ層 | セキュリティ層|
 | --- | --- | --- | --- | --- |
 | **1. 要件定義・スコープ策定**<br><br>(Discovery & Scoping) | 利用するAIクライアントや自社UIの選定、エージェントの推論要件の定義<br>（**Amazon Bedrock Agents**） | 連携対象となる社内システム（DB、SaaS、API）の仕様・データ構造の分析<br>（**Bedrock Action Groups**） | 閉域網・オンプレ・クラウドといったインフラ環境要件、ネットワーク設計<br>（**Amazon VPC**） | 複数バックエンドの集約・ルーティング設計、認証・認可境界、機密情報要件の定義<br>（**AgentCore Identity**, **AWS IAM**） |
 | **2. プロトタイピング & 検証**<br><br>(Prototyping & Validation) | 開発者によるプロンプトの挙動テストやオーケストレーションの動作確認<br>（**Bedrock Agents Test UI**, **Bedrock Console**） | 個別システムにアクセスする最小限のモックやAPIラッパーの実装と単体テスト<br>（**AWS Lambda**） | 自前サーバーを構築しない、マネージド環境を利用した即時検証の開始<br>（**AWS Serverless Application Model (SAM)**） | 簡易的な疎通テスト、テスト用のNGワード設定・入力バリデーション確認<br>（**Bedrock Guardrails Test Console**） |
